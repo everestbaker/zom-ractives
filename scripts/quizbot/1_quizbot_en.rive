@@ -8,14 +8,23 @@
 < object
 
 + tibetan
-- <send> {topic=lang-bo} {@ *}
+- {topic=lang-bo} {@ *}
+
++ bo
+- {topic=lang-bo} {@ *}
+
++ english
+- {topic=default} {@ *}
+
++ en
+- {topic=default} {@ *}
 
 + *
-- <send> {topic=default} {@ *}
+- {topic=default} {@ *}
 
 > topic default
 + *
-- Ahem... <delay seconds=2> I am Agu Denpa, the quiz master!
+- Ahem... I am Agu Denpa, the quiz master!
 ^ ཁྱེད་རང་བོད་ཡིག་གི་ལམ་ནས་དྲི་རྩད་འགྲན་བསྡུར་ནང་ཞུགས་འདོད་ཚེ། 'tibetan' གཏགས་རོགས།
 ^ I traveled across Tibet to prepare this quiz for you. This quiz has 17 questions. All the best!
 ^ Here are your quiz instructions:
@@ -43,7 +52,8 @@
 
 + (d|30)
 - Well done, but that was a very easy question. 
-^ <add points=1> <send> {topic=question-2} {@ question}
+^ <add points=1> 
+^ <send> {topic=question-2} {@ question}
 
 + *
 - Shame on you. There are 30 letters in the Tibetan alphabet.
@@ -181,7 +191,8 @@
 ^[d] 150 km
 
 + (c|270 km|270|270km)
-- Nice. That was a tough one and you nailed it.<add points=1> 
+- Nice. That was a tough one and you nailed it.
+^ <add points=1> 
 ^ <send> {topic=question-8} {@ question}
 
 + *
@@ -426,6 +437,7 @@
 < topic
 
 > topic final-score
+
 + question
 * <get points> == 17 => Final score: 17 out of 17! Just amazing, perfect score. You got Tibetan history down! <send> {topic=final} {@ question}
 * <get points> > 12 => Final score: <get points> points out of 17! Brush up on some history and try again soon! <send> {topic=final} {@ question}
@@ -437,18 +449,14 @@
 < topic
 
 > topic final
-+ question
-- \n\n Quizmaster Agu Denpa here. Thank you for playing my quiz.
+
++ (restart|again|more)
+- <send> {topic=default} {@ *}
+
++ *
+- Quizmaster Agu Denpa here. Thank you for playing my quiz.
 ^ I would be grateful if you share the quiz with your friends and family.
 ^ To play again, type 'restart'
-^ To leave, type 'end'
 
-+ restart
-//- <set points=0> Points should be zero: <get points>
-^ Welcome to my quiz again! Awkward re-introduction begins ..\n
-^ <send> {topic=default} {@ *}
-
-+ (end|*)
-- Thank you and bye!
 
 < topic
