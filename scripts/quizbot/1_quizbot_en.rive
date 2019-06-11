@@ -33,7 +33,7 @@
 ^ 3. Ready to go, type "start".
 
 + tibetan
-- <send> {topic=lang-bo} {@ *}
+- {topic=lang-bo} {@ *}
 
 + (quiz|start) {weight=10}
 - <set points=0>{topic=question-1} {@ question}
@@ -53,14 +53,14 @@
 + (d|30)
 - Well done, but that was a very easy question. 
 ^ <add points=1> 
-^ <send> {topic=question-2} {@ question}
+^ {topic=question-2} {@ question}
 
 + *
 - Shame on you. There are 30 letters in the Tibetan alphabet.
-^ <send> {topic=question-2} {@ question}
+^ {topic=question-2} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -76,14 +76,14 @@
 
 + (c|dranyen)
 - La re do, you got it.<add points=1> 
-^ <send> {topic=question-3} {@ question}
+^ {topic=question-3} {@ question}
 
 + *
 - Wrong. It’s Dranyen. 
-^ <send> {topic=question-3} {@ question}
+^ {topic=question-3} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -99,14 +99,14 @@
  
 + (b|nyatri tsenpo|nyatri|tsenpo)
 - Wow, you know something about history! <add points=1> 
-^ <send> {topic=question-4} {@ question}
+^ {topic=question-4} {@ question}
 
 + *
 - Wrong. Nyatri Tsenpo was the first king of Tibet. Ever heard the song, “Don’t know nothing about history?” 
-^ <send> {topic=question-4} {@ question}
+^ {topic=question-4} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -122,14 +122,14 @@
 
 + (b|10)
 - Spot on. You must be a nomad yourself! <add points=1> 
-^ <send> {topic=question-5} {@ question}
+^ {topic=question-5} {@ question}
 
 + *
 - Wrong. It’s 10. You’re hopeless. Don’t even ask me how I know.
-^ <send> {topic=question-5} {@ question}
+^ {topic=question-5} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -145,14 +145,14 @@
 
 + (a|1055) 
 - Wow! That was a tough one and you nailed it. Good for you.<add points=1>
-^ <send> {topic=question-6} {@ question}
+^ {topic=question-6} {@ question}
 
 + *
 - Sorry. There are 1,055 lakes that are larger than 1 square kilometer on the Tibetan plateau.
-^ <send> {topic=question-6} {@ question}
+^ {topic=question-6} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -168,15 +168,15 @@
 
 + (d|utsang)
 - You got it! Looks like you’ve traveled a bit, or at least studied geography.<add points=1> 
-^ <send> {topic=question-7} {@ question}
+^ {topic=question-7} {@ question}
 
 + *
 - Wrong. Yamdrok Lake is in Utsang, just a couple of hours drive from Lhasa. 
 ^ Go back to high school, study some, and then come back to play this game.
-^ <send> {topic=question-7} {@ question}
+^ {topic=question-7} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -193,14 +193,14 @@
 + (c|270 km|270|270km)
 - Nice. That was a tough one and you nailed it.
 ^ <add points=1> 
-^ <send> {topic=question-8} {@ question}
+^ {topic=question-8} {@ question}
 
 + *
 - Sorry. You are a bad guesser. 
-^ <send> {topic=question-8} {@ question}
+^ {topic=question-8} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -216,15 +216,15 @@
 
 + (d|rebkong)
 - Correct, well done.<add points=1>
-^ <send> {topic=question-9} {@ question}
+^ {topic=question-9} {@ question}
 
 + *
 - Wrong. Gendun Choephel was born in Rebkong, just like Tsongkhapa and many other famous scholars. 
 ^ I’m flabbergasted you don’t even know that!
-^ <send> {topic=question-9} {@ question}
+^ {topic=question-9} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -240,15 +240,15 @@
 
 + (c|9|nine)
 - That’s correct. Gu means 9, thuk means thukpa. So guthuk is thukpa with 9 ingredients. Pretty basic. <add points=1> 
-^ <send> {topic=question-10} {@ question}
+^ {topic=question-10} {@ question}
 
 + *
 - OMG, are you serious? If you used your common sense once in awhile, you would have answered correctly. 
 ^ Gu means 9, thuk means thukpa. So guthuk is thukpa with 9 ingredients. 
-^ <send> {topic=question-10} {@ question}
+^ {topic=question-10} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -264,14 +264,14 @@
 
 + (b|thonmi sambhota|thonmi|sambhota)
 - Great work! Thonmi Sambhota invented the Tibetan script, developing the 30 alphabets and the 4 vowels. <add points=1> 
-^ <send> {topic=question-11} {@ question}
+^ {topic=question-11} {@ question}
 
 + *
 - That was an easy question, and you messed up big time. Thonmi Sambhota invented the Tibetan script. 
-^ <send> {topic=question-11} {@ question}
+^ {topic=question-11} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -287,14 +287,14 @@
 
 + (d|gupta script|gupta)
 - Well done! <add points=1> 
-^ <send> {topic=question-12} {@ question}
+^ {topic=question-12} {@ question}
 
 + *
 - Wrong! Tibetan script was modeled on the Gupta script. 
-^ <send> {topic=question-12} {@ question}
+^ {topic=question-12} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -310,14 +310,14 @@
  
 + (c|dhondup gyal|dhondup|gyal)
 - Wow, you’re an educated reader of Tibetan literature!<add points=1> 
-^ <send> {topic=question-13} {@ question}
+^ {topic=question-13} {@ question}
 
 + *
 - Sorry. That famous poem was written by Dhondup Gyal. 
-^ <send> {topic=question-13} {@ question}
+^ {topic=question-13} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -333,14 +333,14 @@
     
 + (c|justin bieber|bieber)
 - You got it. Justin Bieber is a great singer but a Canadian eh! <add points=1> 
-^ <send> {topic=question-14} {@ question}
+^ {topic=question-14} {@ question}
 
 + *
 - Wrong. Jamyang Kyi, Sherten and Tsewang Lhamo are glorious Tibetan singers and so is Justin Bieber but he's Canadian and we love Canadians eh! 
-^ <send> {topic=question-14} {@ question}
+^ {topic=question-14} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -356,14 +356,14 @@
 
 + (c|drangchar)
 - Correct! But that was an easy one.<add points=1> 
-^ <send> {topic=question-15} {@ question}
+^ {topic=question-15} {@ question}
 
 + *
 - Wrong. Drangchar is the correct answer.
-^ <send> {topic=question-15} {@ question}
+^ {topic=question-15} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -379,14 +379,14 @@
 
 + (a|monkey|monkeys)
 - That’s right. Before Darwin developed his theory of evolution, Tibetans already believed that they came from monkeys. Perhaps, Darwin was inspired by the Tibetan myth of origin, we don’t really know.<add points=1> 
-^ <send> {topic=question-16} {@ question}
+^ {topic=question-16} {@ question}
 
 + *
 - Wrong. Tibetans may look like lions, dance like yaks, and fly like eagles, but those animals are not their ancestors in myth or in fact. 
-^ <send> {topic=question-16} {@ question}
+^ {topic=question-16} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
@@ -402,14 +402,14 @@
 
 + (b|samye|samye monastery)
 - Correct! Samye was built in the 8th century when Buddhism replaced Bon as the dominant religion of Tibet.<add points=1> 
-^ <send> {topic=question-17} {@ question}
+^ {topic=question-17} {@ question}
 
 + *
 - These are famous monasteries but none of them is older than Samye. 
-^ <send> {topic=question-17} {@ question}
+^ {topic=question-17} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 < topic
 
 > topic question-17
@@ -425,33 +425,33 @@
 + (a|milarepa)
 - You got it! Milarepa sang thousands of songs in the wilderness, and somehow his student Rechungpa was able to document most of them in his biography. 
 ^ This particular line captures Milarepa’s scathing critique of those who lived a worldly life of desire, anger and ignorance. \n<add points=1> 
-^ <send> {topic=final-score} {@ question}
+^ {topic=final-score} {@ question}
 
 + *
 - Wrong. This line is from the 12th century saint Milarepa. \n
-^ <send> {topic=final-score} {@ question}
+^ {topic=final-score} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 
 < topic
 
 > topic final-score
 
 + question
-* <get points> == 17 => Final score: 17 out of 17! Just amazing, perfect score. You got Tibetan history down! <send> {topic=final} {@ question}
-* <get points> > 12 => Final score: <get points> points out of 17! Brush up on some history and try again soon! <send> {topic=final} {@ question}
-* <get points> > 8 => Final score: <get points> points out of 17 is a start... Study up and you can do better! <send> {topic=final} {@ question}
-* <get points> < 8 => Final score: <get points> points out of 17.. That was... uh... yeah... you need some serious studying! <send> {topic=final} {@ question}
+* <get points> == 17 => Final score: 17 out of 17! Just amazing, perfect score. You got Tibetan history down! {topic=final} {@ question}
+* <get points> > 12 => Final score: <get points> points out of 17! Brush up on some history and try again soon! {topic=final} {@ question}
+* <get points> > 8 => Final score: <get points> points out of 17 is a start... Study up and you can do better! {topic=final} {@ question}
+* <get points> < 8 => Final score: <get points> points out of 17.. That was... uh... yeah... you need some serious studying! {topic=final} {@ question}
 
 + (quit|stop|quiz|restart|again|end)
-- <send> {topic=final} {@ *}
+- {topic=final} {@ *}
 < topic
 
 > topic final
 
 + (restart|again|more)
-- <send> {topic=default} {@ *}
+- {topic=default} {@ *}
 
 + *
 - Quizmaster Agu Denpa here. Thank you for playing my quiz.
