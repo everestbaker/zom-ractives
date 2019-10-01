@@ -1,0 +1,155 @@
+! version = 2.0
+! local concat = newline
+
++ *
+- <send> {topic=home} {@ *}
+
+> topic home
+    + *
+    - \n Tashi Delek! <delay seconds=2> 
+    ^ I am your Digital Security bot. 
+    ^ <delay seconds=2> I will try to help you answer any questions you have on digital security. \n
+    ^ <delay seconds=2> Please type which topic you are interested in:
+    ^ <delay seconds=2> For Mobile security, type 1
+    ^ <delay seconds=2> For VPN, type 2
+    ^ <delay seconds=2> For HTTPS, type 3
+    ^ <delay seconds=2> Type "quit" to leave end our chat anytime.
+
+    + (1)
+    - I am now putting on my Mobile Security hat. What question do you have for me?
+    ^ <send> {topic=mobile-security} 
+
+    + (2)
+    - Yes VPN! VPN is important to learn about. What question do you have for me?
+    ^ <send> {topic=vpn} 
+
+    + (3)
+    - HTTPS helps us to securely browse the internet. How may I help you with HTTPS?
+    ^ <send> {topic=https} 
+
+    + quit
+    - <send> {topic=final} {@ *}
+
+    // all other responses continue to loop in this section
+    + (other)
+    - Please type 1 or 2 or 3
+    ^ <send> {topic=home} {@ *}
+
+< topic
+
+> topic final
+    + (*)
+    - \n I hope I was able to help you today.
+    ^ Please let me know if I did not answer your questions.
+    ^ To go back to main menu, type 'home'
+    ^ To leave, type 'end'
+
+    + (home)
+    - Let's start again.
+    //- <set points=0> Points should be zero: <get points>
+    //^ Welcome to my quiz again! Awkward re-introduction begins ..\n
+    - <send> {topic=home} {@ *}
+
+    + (end)
+    - \n Thank you and goodbye!
+    ^ :tiboji-agu_denpa_avatar:
+
+< topic
+
+> topic vpn
+    // Capture all other edge cases
+    + *
+    - Sorry we did not understand your question OR we do not have an answer at this stage. Please type "home" to go back to main menu.\n
+
+    + [*] (help|broken|stopped working|broke|broken|crash) [*]
+    - I will do my best to help you. You can also check https://zom.im for more info, or email support@zom.im!
+
+    + (home)
+    - <send> {topic=home} {@ *}
+
+    + (quit|stop|quiz|restart|again|end)
+    - <send> {topic=final} {@ *}
+< topic
+
+> topic https
+    // Capture all other edge cases
+    + *
+    - Sorry we did not understand your question OR we do not have an answer at this stage. Please type "home" to go back to main menu.\n
+
+    + [*] (help|broken|stopped working|broke|broken|crash) [*]
+    - I will do my best to help you. You can also check https://zom.im for more info, or email support@zom.im!
+
+    + (home)
+    - <send> {topic=home} {@ *}
+
+    + (quit|stop|quiz|restart|again|end)
+    - <send> {topic=final} {@ *}
+< topic
+
+> topic mobile-security
+    // Capture all other edge cases
+    + *
+    - Sorry we did not understand your question. Could you please phrase it differently? Or you could also add thayai to your Zom friend list and ask him?
+
+    + (home)
+    - <send> {topic=home} {@ *}
+
+    + (quit|stop|quiz|restart|again|end)
+    - <send> {topic=final} {@ *}
+
+    + [*] (trace|trace phone|switch off|switched off) [*] 
+    - Although your phone stops communication with cell tower while on switch off mode, there are advanced surveillane technogologies that can still trace. The best option is to remove your SIM card and switch to flight mode.\n
+
+    + [*] (imei|find imei|find my imei|where imei) [*] 
+    - IMEI number is a unique 15 digit code assigned to each mobile device. To find out yours, enter *#06# from your call screen.\n
+
+    + [*] (trace sim|trace sim card|sim card) [*] 
+    - Taking out your SIM card just to go off the grid for a particular time, might allow you to avoid surveillance for that time. But if you don't want to be traced at all, just getting rid of your SIM card won't help, you will also have to get rid of your phone since its unique number (IMEI) is tied to your SIM card.\n
+
+    + [*] (gps off|gps|gps trace|track gps) [*] 
+    - Apparently, Yes! you can still be tracked even if location services and GPS are turned off. \n
+
+    + [*] (prevent trace|trace prevent|switch off|switched off) [*] 
+    - If possible, using a prepaid SIM card not registered under your name along with a cheap secondary phone that you can dispose whenever needed, might be a good idea.\n
+
+    + [*] (trace location|location phone|trace phone) [*] 
+    - Your location can be traced by your  IMEI, GPS and Sim card.\n
+
+    + [*] (third person|listen to your call|listen to conversation|phone tapping|phone access) [*] 
+    - Yes, mobile service providers have full acess to and can listen to and record your regular calls and text messages. Governments can also intercept your communication. If you don't want third parties to access your communication, use encrypted apps for messaging and calls. Also, if you don't want a third party to hear a conversation you want to have with your relatives or friends, leave your phones and other communication devices in a different room.\n
+
+    + [*] (block third person|block listening|stop phone tapping|block phone access)  [*] 
+    - Yes! If you are having conversation offline and do not want a third party to hear your conversation, take out your SIM card and leave all your communication devices in a separate room. If you do not want a third party listen to your phone coversation or read chats, make sure to use encrypted communication apps.\n
+
+    + [*] (delete files|securely delete|delete pictures|recover files) [*] 
+    - When you delete messages, photos and files from your phone or computer, they still remain in your phone. A tech experts can recover them easily. \n
+
+    + [*] (wechat security|wechat encryption|wechat) [*] 
+    - WeChat does not provide encryption hence, Tencent, the company that runs WeChat can see all your activities. Also, Chinese companies are legally obligated to give its government access to all data. \n
+
+    + [*] (wechat impact|use wechat|use wechat) [*] 
+    - Be aware that WeChat can spy on you so be careful about doing or saying anything sensitive. the ultimate solution is to use ulternative secure apps like Signal, Zom Mobile Messenger, Chatsecure etc. instead to ensure security. \n
+
+    + [*] (app permission|app|permission settings) [*] 
+    - App permission means when you install an app on your phone, you control which  information that an app can access—known as permissions. For example, an app might want permission to see your device contacts, location or call history. certain apps wanted to access all information, such apps might function like malicious software that monitor your activities online and spy on you. \n
+
+    + [*] (find app permission settings|app permission location| app permission settings|app permission setting|app setting|app settings) [*] 
+    - On your device:\n
+    ^ 1. Open the main Settings
+    ^ 2. Scroll down and click on the app to see what permission you have given to that specific app.
+    ^ 3. You can click on each feature to disable that permission \n\n
+
+    + [*] (trust app|trust app developer|app developer) [*] 
+    - You have to know if the app developer or the software company has direct ties to the government (like Tencent that owns WeChat and their ties to the Chinese government). 
+    ^ \n If the answer is Yes, you can assume that the app will share your personal information with the government. 
+    ^ \n You also need to see if the app asks for unreasonable permission. For example, a torch app does not need to access your location and call history to use it. 
+    ^ \n Finally, you have to know if the app gives basic security. For example, Signal and Zom mobile messenger apps use end-to-end encryption to protect their users' data.\n\n
+
+    + [*] (qr code|red pocket|qr code security) [*] 
+    - You can't scan all QR code, especially when you receive it from random WeChat groups. Certain QR code works like malicious link that leads you to a malicious site where your personal information are compromised, stored and stolen by third parties.\n
+
+    + [*] (secure apps|full encryption|secure apps) [*] 
+    - Secure apps are the apps that encrypt information and protect the personal data. For example, Signal and Zom mobile messenger apps use end-to-end encryption to protect their users' data. \n
+
+< topic
+
